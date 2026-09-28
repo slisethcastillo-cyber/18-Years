@@ -771,22 +771,22 @@ const memories = [
     },
 
     {
-        image: "images/foto2.jpeg",
+        image: "Images/foto2.jpeg",
         caption: "Otro momento."
     },
 
     {
-        image: "images/foto3.jpg",
+        image: "Images/foto3.jpg",
         caption: "Otra historia."
     },
 
     {
-        image: "images/foto4.jpg",
+        image: "Images/foto4.jpg",
         caption: "Un momento para guardar."
     },
 
     {
-        image: "images/foto5.jpg",
+        image: "Images/foto5.jpg",
         caption:
             "Y todavía quedan muchos por crear. ❤️"
     }
