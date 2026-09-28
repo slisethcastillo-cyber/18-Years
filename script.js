@@ -766,7 +766,7 @@ constellationNext.addEventListener(
 const memories = [
 
     {
-        image: "images/foto1.jpg",
+        image: "Images/foto1.jpg",
         caption: "Un recuerdo. ❤️"
     },
 
