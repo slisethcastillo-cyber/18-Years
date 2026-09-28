@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Chapter 18 — For My Sweetcake</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <main id="movie">
+
+
+        <!-- =================================================
+             FONDO DE ESTRELLAS
+             ================================================= -->
+
+        <div class="global-stars"></div>
+
+ <!-- =================================================
+             ESCENA 0 — CUENTA REGRESIVA
+             ================================================= -->
+
+        <section
+            id="scene0"
+            class="scene active"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content countdown-content">
+
+                <p class="eyebrow">
+                    ✦ A SPECIAL STORY ✦
+                </p>
+
+                <h1>
+                    CHAPTER <span>18</span>
+                </h1>
+
+                <p class="countdown-intro">
+                    Una historia está por comenzar...
+                </p>
+
+
+                <div
+                    id="countdown"
+                    class="countdown"
+                >
+
+                    <div class="time-box">
+                        <span id="days">00</span>
+                        <small>DÍAS</small>
+                    </div>
+
+                    <div class="colon">:</div>
+
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <small>HORAS</small>
+                    </div>
+
+                    <div class="colon">:</div>
+
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <small>MIN</small>
+                    </div>
+
+                    <div class="colon">:</div>
+
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <small>SEG</small>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="lockedMessage"
+                    class="locked-message"
+                >
+                    🔒
+
+                    <span>
+                        Algunas historias merecen esperar.
+                    </span>
+                </div>
+
+
+                <div
+                    id="unlockMessage"
+                    class="unlock-message"
+                >
+                    <p>ES HORA.</p>
+
+                    <span>
+                        Tu historia de 18 comienza ahora.
+                    </span>
+
+                    <button
+                        id="unlockButton"
+                        class="movie-button"
+                    >
+                        COMENZAR
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+       
+
+
+
+        <!-- =================================================
+             ESCENA 1 — EL COMIENZO
+             ================================================= -->
+
+        <section
+            id="scene1"
+            class="scene"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content">
+
+                <p class="scene-line first-line">
+                    Hoy es un día muy especial...
+                </p>
+
+                <p class="scene-line because">
+                    Porque...
+                </p>
+
+                <h1 class="birthday-reveal">
+                    ES TU CUMPLEAÑOS
+                </h1>
+
+                <p class="sweet-name">
+                    mi Amorrrrrr ❤️
+                </p>
+
+                <button class="movie-button next-button">
+                    CONTINUAR →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 2 — NUEVO CAPÍTULO
+             ================================================= -->
+
+        <section
+            id="scene2"
+            class="scene"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content">
+
+                <p class="small-title">
+                    Y HOY...
+                </p>
+
+                <h2>
+                    COMIENZA UN NUEVO
+                    <br>
+                    CAPÍTULO
+                </h2>
+
+                <div class="chapter-number-big">
+                    18
+                </div>
+
+                <p class="chapter-description">
+                    Una nueva etapa.
+                    <br>
+                    Nuevos sueños.
+                    <br>
+                    Nuevas historias.
+                </p>
+
+                <button class="movie-button next-button">
+                    CONTINUAR →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 3 — 18 PÁGINAS
+             ================================================= -->
+
+        <section
+            id="scene3"
+            class="scene"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content book-scene">
+
+                <p class="small-title">
+                    UNA HISTORIA EN
+                </p>
+
+                <h2 class="book-main-title">
+                    18 PÁGINAS
+                </h2>
+
+
+                <div class="book">
+
+                    <div
+                        id="bookPage"
+                        class="book-page"
+                    >
+
+                        <span
+                            id="pageNumber"
+                            class="page-number"
+                        >
+                            PÁGINA 01
+                        </span>
+
+                        <div class="page-decoration">
+                            ✦
+                        </div>
+
+                        <h3 id="pageTitle">
+                            Tu sonrisa
+                        </h3>
+
+                        <p id="pageText">
+                            Una de esas pequeñas cosas
+                            capaces de hacer especial
+                            cualquier día.
+                        </p>
+
+                        <div class="page-line"></div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="nextPageButton"
+                    class="movie-button"
+                >
+                    PASAR PÁGINA →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 4 — CONSTELACIÓN
+             ================================================= -->
+
+        <section
+            id="scene4"
+            class="scene"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content constellation-scene">
+
+                <p class="small-title">
+                    UNA PEQUEÑA
+                </p>
+
+                <h2>
+                    CONSTELACIÓN
+                </h2>
+
+                <p class="constellation-description">
+                    Hay cosas que solo brillan
+                    cuando están juntas.
+                </p>
+
+
+                <div
+                    id="constellation"
+                    class="constellation"
+                >
+
+                    <svg
+                        id="constellationLines"
+                        class="constellation-lines"
+                    >
+                    </svg>
+
+
+                    <button
+                        class="star-point"
+                        data-star="0"
+                        style="--x: 18%; --y: 30%;"
+                    >
+                        ✦
+                        <span>Risas</span>
+                    </button>
+
+
+                    <button
+                        class="star-point"
+                        data-star="1"
+                        style="--x: 38%; --y: 65%;"
+                    >
+                        ✦
+                        <span>Momentos</span>
+                    </button>
+
+
+                    <button
+                        class="star-point"
+                        data-star="2"
+                        style="--x: 58%; --y: 25%;"
+                    >
+                        ✦
+                        <span>Confianza</span>
+                    </button>
+
+
+                    <button
+                        class="star-point"
+                        data-star="3"
+                        style="--x: 78%; --y: 62%;"
+                    >
+                        ✦
+                        <span>Cariño</span>
+                    </button>
+
+
+                    <button
+                        class="star-point"
+                        data-star="4"
+                        style="--x: 50%; --y: 48%;"
+                    >
+                        ✦
+                        <span>Tú</span>
+                    </button>
+
+                </div>
+
+
+                <p
+                    id="constellationMessage"
+                    class="constellation-message"
+                >
+                </p>
+
+
+                <button
+                    id="constellationNext"
+                    class="movie-button hidden"
+                >
+                    CONTINUAR →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 5 — ANTES DE CONTINUAR
+             ================================================= -->
+
+        <section
+            id="scene5"
+            class="scene black-scene"
+        >
+
+            <div class="scene-content cinematic-text">
+
+                <p class="cinematic-line">
+                    Hay momentos que duran segundos...
+                </p>
+
+                <p class="cinematic-line">
+                    pero terminan convirtiéndose
+                    en recuerdos.
+                </p>
+
+                <p class="cinematic-line">
+                    Y hay personas que hacen que
+                    esos recuerdos sean especiales.
+                </p>
+
+                <h2 class="cinematic-name">
+                   ❤️
+                </h2>
+
+                <button class="movie-button next-button">
+                    CONTINUAR →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 6 — RECUERDOS
+             ================================================= -->
+
+        <section
+            id="scene6"
+            class="scene"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content memories-scene">
+
+                <p class="small-title">
+                    CAPTURADOS EN EL TIEMPO
+                </p>
+
+                <h2>
+                    RECUERDOS
+                </h2>
+
+
+                <div class="polaroid-container">
+
+                    <div
+                        class="polaroid active-photo"
+                        data-photo="0"
+                    >
+
+                        <div class="photo-frame">
+                            <img
+                                src="images/foto1.jpg"
+                                alt="Recuerdo 1"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="photo-placeholder">
+                                📷
+                            </span>
+                        </div>
+
+                        <p>
+                            Un recuerdo. ❤️
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    id="memoryCaption"
+                    class="memory-caption"
+                >
+                    Un recuerdo.
+                </p>
+
+
+                <button
+                    id="nextMemory"
+                    class="movie-button"
+                >
+                    SIGUIENTE →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 7 — REGALO SECRETO
+             ================================================= -->
+
+        <section
+            id="scene7"
+            class="scene"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content gift-scene">
+
+                <p class="small-title">
+                    UN PEQUEÑO REGALO
+                </p>
+
+                <h2>
+                    Tienes un regalo.
+                </h2>
+
+                <p class="gift-description">
+                    Pero está protegido...
+                </p>
+
+
+                <div
+                    id="giftArea"
+                    class="gift-area"
+                >
+
+                    <div class="gift-box">
+                        <div class="gift-lid"></div>
+                        <div class="gift-ribbon"></div>
+                        <div class="gift-body"></div>
+                        <div class="gift-bow">✦</div>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="passwordArea"
+                    class="password-area"
+                >
+
+                    <p>
+                        ¿Cuántos años cumples hoy?
+                    </p>
+
+                    <input
+                        id="birthdayAnswer"
+                        type="text"
+                        maxlength="2"
+                        placeholder="18"
+                    >
+
+                    <button
+                        id="unlockGift"
+                        class="movie-button"
+                    >
+                        DESBLOQUEAR
+                    </button>
+
+                    <p
+                        id="wrongAnswer"
+                        class="wrong-answer"
+                    >
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="giftSuccess"
+                    class="gift-success"
+                >
+
+                    <div class="gift-open-icon">
+
+                    </div>
+
+                    <p>
+                        REGALO DESBLOQUEADO
+                    </p>
+
+                    <button class="movie-button next-button">
+                        CONTINUAR →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 8 — 18 DESEOS
+             ================================================= -->
+
+        <section
+            id="scene8"
+            class="scene"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content wishes-scene">
+
+                <p class="small-title">
+                    PARA ESTA NUEVA ETAPA
+                </p>
+
+                <h2>
+                    18 DESEOS
+                </h2>
+
+                <p class="wish-intro">
+                    18 deseos para tus 18 años.
+                </p>
+
+
+                <div
+                    id="wishCard"
+                    class="wish-card"
+                >
+
+                    <span id="wishNumber">
+                        01
+                    </span>
+
+                    <p id="wishText">
+                        Que nunca dejes de soñar.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="nextWish"
+                    class="movie-button"
+                >
+                    SIGUIENTE →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 9 — CARTA
+             ================================================= -->
+
+        <section
+            id="scene9"
+            class="scene"
+        >
+
+            <div class="stars"></div>
+
+            <div class="scene-content letter-scene">
+
+                <p class="important-text">
+                    One important thing...
+                </p>
+
+                <div class="sweetcake-title">
+
+                    <span>
+                        FOR YOU...
+                    </span>
+
+                    <strong>
+                        My Sweetcake ❤️
+                    </strong>
+
+                </div>
+
+
+                <div class="letter">
+
+                    <h2>
+                        Feliz cumpleaños, mi amor ❤️
+                    </h2>
+
+                    <p id="letterText"></p>
+
+                    <div class="signature">
+                        Con mucho cariño,
+                        <br>
+                        <strong>Sofía ♡</strong>
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="letterContinue"
+                    class="movie-button hidden"
+                >
+                    CONTINUAR →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 10 — CUMPLEAÑOS
+             ================================================= -->
+
+        <section
+            id="scene10"
+            class="scene final-scene"
+        >
+
+            <div class="stars"></div>
+
+            <div
+                id="confetti"
+                class="confetti"
+            >
+            </div>
+
+
+            <div class="scene-content final-content">
+
+                <p class="final-small">
+                    TODAY IS YOUR DAY
+                </p>
+
+                <h1>
+                    FELIZ
+                </h1>
+
+                <div class="final-number">
+                    18
+                </div>
+
+                <h2>
+                    CUMPLEAÑOS
+                </h2>
+
+                <h3>
+                    JAKAM ❤️
+                </h3>
+
+                <p class="final-message">
+                    Que estos 18 sean solamente
+                    el comienzo de algo increíble.
+                </p>
+
+                <button
+                    id="finalContinue"
+                    class="movie-button"
+                >
+                    CONTINUAR →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESCENA 11 — FINAL
+             ================================================= -->
+
+        <section
+            id="scene11"
+            class="scene black-scene ending-scene"
+        >
+
+            <div class="scene-content ending-content">
+
+                <p class="ending-line">
+                    Esto no es el final...
+                </p>
+
+                <h1>
+                    ES SOLO EL COMIENZO.
+                </h1>
+
+                <div class="ending-divider">
+                    ♡
+                </div>
+
+                <p class="chapter-ending">
+                    CHAPTER 18
+                </p>
+
+                <p class="ending-small">
+                    La historia apenas comienza.
+                </p>
+
+                <p class="signature-final">
+                    Sofía
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

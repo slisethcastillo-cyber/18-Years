@@ -1,0 +1,1907 @@
+/* =========================================================
+   CHAPTER 18
+   FOR MY SWEETCAKE
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+body {
+    background: #000;
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* =========================================================
+   MOVIE
+   ========================================================= */
+
+#movie {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+/* =========================================================
+   ESTRELLAS
+   ========================================================= */
+
+.global-stars,
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.stars {
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.9) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.5) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        120px 120px,
+        210px 210px;
+
+    background-position:
+        20px 30px,
+        80px 100px;
+
+    opacity: .45;
+
+    animation:
+        starsMove 30s linear infinite;
+}
+
+
+.global-stars {
+    z-index: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.4) 1px,
+            transparent 1px
+        );
+
+    background-size: 180px 180px;
+
+    opacity: .2;
+}
+
+
+/* =========================================================
+   ESCENAS
+   ========================================================= */
+
+.scene {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    background:
+        radial-gradient(
+            circle at center,
+            #17131d 0%,
+            #08070b 45%,
+            #000 100%
+        );
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 1.2s;
+}
+
+
+.scene.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+.scene-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(92%, 1000px);
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.movie-button {
+    margin-top: 35px;
+
+    padding: 14px 35px;
+
+    border:
+        1px solid rgba(255,255,255,.45);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,.02);
+
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition:
+        .35s ease;
+}
+
+
+.movie-button:hover {
+    background:
+        rgba(255,255,255,.1);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.12);
+
+    transform: scale(1.06);
+
+    letter-spacing: 5px;
+}
+
+
+.movie-button:active {
+    transform: scale(.96);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   ESCENA 0 — COUNTDOWN
+   ========================================================= */
+
+.countdown-content h1 {
+    font-size:
+        clamp(45px, 8vw, 90px);
+
+    font-weight: 400;
+
+    letter-spacing: 8px;
+}
+
+
+.countdown-content h1 span {
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #d9d0ff,
+            #fff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.eyebrow {
+    margin-bottom: 20px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 7px;
+
+    color:
+        rgba(255,255,255,.5);
+}
+
+
+.countdown-intro {
+    margin-top: 20px;
+
+    font-size: 17px;
+
+    color:
+        rgba(255,255,255,.65);
+}
+
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 50px;
+}
+
+
+.time-box {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 70px;
+}
+
+
+.time-box span {
+    font-family: Arial, sans-serif;
+
+    font-size:
+        clamp(30px, 5vw, 55px);
+
+    font-weight: 300;
+}
+
+
+.time-box small {
+    margin-top: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(255,255,255,.4);
+}
+
+
+.colon {
+    font-size: 30px;
+
+    color:
+        rgba(255,255,255,.35);
+}
+
+
+.locked-message {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 45px;
+
+    font-size: 20px;
+
+    color:
+        rgba(255,255,255,.55);
+}
+
+
+.locked-message span {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+.unlock-message {
+    display: none;
+
+    margin-top: 40px;
+
+    animation:
+        unlockAppear 2s ease forwards;
+}
+
+
+.unlock-message p {
+    font-size:
+        clamp(35px, 7vw, 70px);
+
+    letter-spacing: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+.unlock-message span {
+    color:
+        rgba(255,255,255,.6);
+}
+
+
+/* =========================================================
+   ESCENA 1
+   ========================================================= */
+
+.scene-line {
+    opacity: 0;
+}
+
+
+.first-line {
+    font-size:
+        clamp(20px, 3vw, 30px);
+
+    letter-spacing: 2px;
+
+    animation:
+        fadeUp 1.8s ease .4s forwards;
+}
+
+
+.because {
+    margin-top: 55px;
+
+    font-size: 18px;
+
+    color:
+        rgba(255,255,255,.65);
+
+    animation:
+        fadeUp 1.5s ease 2s forwards;
+}
+
+
+.birthday-reveal {
+    margin-top: 20px;
+
+    font-size:
+        clamp(35px, 7vw, 80px);
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    opacity: 0;
+
+    animation:
+        revealTitle 2s ease 3s forwards;
+}
+
+
+.sweet-name {
+    margin-top: 20px;
+
+    font-size:
+        clamp(24px, 4vw, 40px);
+
+    color:
+        rgba(255,255,255,.85);
+
+    opacity: 0;
+
+    animation:
+        fadeUp 1.5s ease 4.2s forwards;
+}
+
+
+/* =========================================================
+   ESCENA 2
+   ========================================================= */
+
+.small-title {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 7px;
+
+    color:
+        rgba(255,255,255,.5);
+
+    margin-bottom: 25px;
+}
+
+
+.scene h2 {
+    font-size:
+        clamp(30px, 5vw, 60px);
+
+    font-weight: 400;
+
+    letter-spacing: 3px;
+}
+
+
+.chapter-number-big {
+    margin-top: 20px;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(130px, 24vw, 260px);
+
+    line-height: .8;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #d5cbf0,
+            #fff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 50px rgba(255,255,255,.15);
+
+    animation:
+        numberAppear 2s ease forwards;
+}
+
+
+.chapter-description {
+    margin-top: 30px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color:
+        rgba(255,255,255,.6);
+}
+
+
+/* =========================================================
+   ESCENA 3 — LIBRO
+   ========================================================= */
+
+.book-scene {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.book-main-title {
+    margin-bottom: 10px;
+}
+
+
+.book {
+    width: min(90%, 680px);
+
+    height: 350px;
+
+    margin-top: 20px;
+
+    perspective: 1200px;
+}
+
+
+.book-page {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.5);
+
+    backdrop-filter: blur(8px);
+
+    transform-origin: left center;
+}
+
+
+.page-number {
+    position: absolute;
+
+    top: 22px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255,255,255,.35);
+}
+
+
+.page-decoration {
+    margin-bottom: 20px;
+
+    font-size: 28px;
+
+    animation:
+        twinkle 2s ease-in-out infinite alternate;
+}
+
+
+.book-page h3 {
+    font-size:
+        clamp(30px, 5vw, 50px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+
+.book-page p {
+    max-width: 520px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color:
+        rgba(255,255,255,.7);
+}
+
+
+.page-line {
+    width: 60px;
+
+    height: 1px;
+
+    margin-top: 25px;
+
+    background:
+        rgba(255,255,255,.35);
+}
+
+
+.book-page.turning {
+    animation:
+        pageTurn .5s ease forwards;
+}
+
+
+.book-page.new-page {
+    animation:
+        pageNew .7s ease forwards;
+}
+
+
+/* =========================================================
+   ESCENA 4 — CONSTELACIÓN
+   ========================================================= */
+
+.constellation-description {
+    margin-top: 15px;
+
+    color:
+        rgba(255,255,255,.55);
+}
+
+
+.constellation {
+    position: relative;
+
+    width: min(90vw, 700px);
+
+    height: 330px;
+
+    margin: 25px auto 0;
+
+    border:
+        1px solid rgba(255,255,255,.04);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.035),
+            transparent 65%
+        );
+}
+
+
+.constellation-lines {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: visible;
+}
+
+
+.constellation-lines line {
+    stroke:
+        rgba(255,255,255,.4);
+
+    stroke-width: 1;
+
+    opacity: 0;
+
+    animation:
+        lineAppear .8s ease forwards;
+}
+
+
+.star-point {
+    position: absolute;
+
+    left: var(--x);
+
+    top: var(--y);
+
+    transform:
+        translate(-50%, -50%);
+
+    border: none;
+
+    background: none;
+
+    color:
+        rgba(255,255,255,.7);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255,255,255,.6)
+        );
+
+    transition:
+        .4s ease;
+}
+
+
+.star-point:hover {
+    transform:
+        translate(-50%, -50%)
+        scale(1.3);
+
+    color: white;
+}
+
+
+.star-point span {
+    position: absolute;
+
+    left: 50%;
+
+    top: 100%;
+
+    transform:
+        translateX(-50%);
+
+    margin-top: 5px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+
+.star-point.found {
+    color: white;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.4);
+}
+
+
+.star-point.found span {
+    opacity: 1;
+}
+
+
+.constellation-message {
+    min-height: 25px;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color:
+        rgba(255,255,255,.7);
+}
+
+
+/* =========================================================
+   ESCENA 5
+   ========================================================= */
+
+.black-scene {
+    background: #000;
+}
+
+
+.cinematic-text {
+    max-width: 850px;
+}
+
+
+.cinematic-line {
+    opacity: 0;
+
+    font-size:
+        clamp(20px, 3vw, 30px);
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,.75);
+}
+
+
+.scene.active .cinematic-line:nth-child(1) {
+    animation:
+        fadeIn 2s ease .8s forwards;
+}
+
+
+.scene.active .cinematic-line:nth-child(2) {
+    animation:
+        fadeIn 2s ease 3.5s forwards;
+}
+
+
+.scene.active .cinematic-line:nth-child(3) {
+    animation:
+        fadeIn 2s ease 6.5s forwards;
+}
+
+
+.cinematic-name {
+    margin-top: 55px;
+
+    opacity: 0;
+
+    animation:
+        fadeUp 2s ease 9s forwards !important;
+}
+
+
+/* =========================================================
+   ESCENA 6 — FOTOS
+   ========================================================= */
+
+.memories-scene h2 {
+    margin-bottom: 15px;
+}
+
+
+.polaroid-container {
+    height: 370px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.polaroid {
+    width: 260px;
+
+    padding: 15px 15px 25px;
+
+    background:
+        #f2f0ed;
+
+    color: #222;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5);
+
+    transform:
+        rotate(-3deg);
+
+    animation:
+        polaroidIn 1s ease forwards;
+}
+
+
+.photo-frame {
+    position: relative;
+
+    width: 100%;
+
+    height: 280px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #ddd;
+}
+
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.photo-placeholder {
+    position: absolute;
+
+    font-size: 40px;
+
+    opacity: .4;
+}
+
+
+.polaroid p {
+    margin-top: 14px;
+
+    font-family:
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 17px;
+}
+
+
+.memory-caption {
+    min-height: 25px;
+
+    color:
+        rgba(255,255,255,.65);
+}
+
+
+/* =========================================================
+   ESCENA 7 — REGALO
+   ========================================================= */
+
+.gift-area {
+    height: 170px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+
+.gift-box {
+    position: relative;
+
+    width: 150px;
+
+    height: 130px;
+}
+
+
+.gift-body {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 15px;
+
+    width: 120px;
+
+    height: 90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #494255,
+            #24202e
+        );
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.6);
+}
+
+
+.gift-lid {
+    position: absolute;
+
+    top: 20px;
+
+    left: 5px;
+
+    width: 140px;
+
+    height: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #655a78,
+            #302b3d
+        );
+
+    border-radius: 3px;
+
+    z-index: 3;
+
+    transition:
+        .9s ease;
+}
+
+
+.gift-ribbon {
+    position: absolute;
+
+    left: 65px;
+
+    top: 20px;
+
+    width: 20px;
+
+    height: 90px;
+
+    background:
+        rgba(255,255,255,.15);
+
+    z-index: 4;
+}
+
+
+.gift-bow {
+    position: absolute;
+
+    top: -10px;
+
+    left: 67px;
+
+    z-index: 5;
+
+    font-size: 25px;
+}
+
+
+.gift-box.open .gift-lid {
+    transform:
+        translateY(-70px)
+        rotate(-7deg);
+}
+
+
+.password-area {
+    margin-top: 10px;
+}
+
+
+.password-area input {
+    display: block;
+
+    width: 100px;
+
+    margin: 20px auto 10px;
+
+    padding: 12px;
+
+    border:
+        1px solid rgba(255,255,255,.3);
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 20px;
+}
+
+
+.wrong-answer {
+    min-height: 25px;
+
+    margin-top: 15px;
+
+    color:
+        rgba(255,255,255,.65);
+}
+
+
+.gift-success {
+    display: none;
+
+    animation:
+        unlockAppear 1s ease forwards;
+}
+
+
+.gift-success.active {
+    display: block;
+}
+
+
+.gift-open-icon {
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+    animation:
+        giftSparkle 1.5s infinite alternate;
+}
+
+
+/* =========================================================
+   ESCENA 8 — DESEOS
+   ========================================================= */
+
+.wish-intro {
+    margin-top: 15px;
+
+    color:
+        rgba(255,255,255,.55);
+}
+
+
+.wish-card {
+    width: min(90%, 600px);
+
+    min-height: 220px;
+
+    margin: 35px auto 0;
+
+    padding: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.035);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.4);
+
+    animation:
+        wishAppear .8s ease;
+}
+
+
+.wish-card span {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255,255,255,.4);
+
+    margin-bottom: 25px;
+}
+
+
+.wish-card p {
+    max-width: 500px;
+
+    font-size:
+        clamp(20px, 3vw, 28px);
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ESCENA 9 — CARTA
+   ========================================================= */
+
+.letter-scene {
+    max-height: 100vh;
+
+    overflow: hidden;
+}
+
+
+.important-text {
+    font-size: 20px;
+
+    font-style: italic;
+
+    color:
+        rgba(255,255,255,.65);
+
+    margin-bottom: 15px;
+}
+
+
+.sweetcake-title {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+
+.sweetcake-title span {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 7px;
+
+    color:
+        rgba(255,255,255,.45);
+}
+
+
+.sweetcake-title strong {
+    font-size:
+        clamp(28px, 4vw, 45px);
+
+    font-weight: 400;
+}
+
+
+.letter {
+    width: min(90%, 720px);
+
+    max-height: 52vh;
+
+    overflow-y: auto;
+
+    margin: auto;
+
+    padding: 35px;
+
+    text-align: left;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.04);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.5);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.letter h2 {
+    margin-bottom: 25px;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    text-align: center;
+}
+
+
+#letterText {
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color:
+        rgba(255,255,255,.75);
+
+    white-space: pre-line;
+}
+
+
+.signature {
+    margin-top: 30px;
+
+    text-align: right;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,.65);
+}
+
+
+/* =========================================================
+   ESCENA 10 — FINAL
+   ========================================================= */
+
+.final-scene {
+    background:
+        radial-gradient(
+            circle at center,
+            #211b2a 0%,
+            #09070c 55%,
+            #000 100%
+        );
+}
+
+
+.final-small {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 7px;
+
+    color:
+        rgba(255,255,255,.45);
+}
+
+
+.final-content h1 {
+    margin-top: 25px;
+
+    font-size:
+        clamp(35px, 6vw, 70px);
+
+    font-weight: 400;
+
+    letter-spacing: 7px;
+}
+
+
+.final-number {
+    font-size:
+        clamp(110px, 20vw, 210px);
+
+    line-height: .85;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #d7cff0,
+            #fff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 60px rgba(255,255,255,.2);
+}
+
+
+.final-content h2 {
+    margin-top: 15px;
+
+    font-size:
+        clamp(30px, 5vw, 55px);
+
+    letter-spacing: 6px;
+}
+
+
+.final-content h3 {
+    margin-top: 15px;
+
+    font-size:
+        clamp(25px, 4vw, 40px);
+
+    font-weight: 400;
+}
+
+
+.final-message {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    color:
+        rgba(255,255,255,.65);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONFETI
+   ========================================================= */
+
+.confetti {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+.confetti-piece {
+    position: absolute;
+
+    top: -30px;
+
+    width: 6px;
+
+    height: 13px;
+
+    background: white;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+
+/* =========================================================
+   ESCENA 11
+   ========================================================= */
+
+.ending-content {
+    max-width: 850px;
+}
+
+
+.ending-line {
+    font-size:
+        clamp(22px, 4vw, 35px);
+
+    color:
+        rgba(255,255,255,.65);
+
+    animation:
+        fadeIn 2s ease forwards;
+}
+
+
+.ending-content h1 {
+    margin-top: 40px;
+
+    font-size:
+        clamp(30px, 6vw, 70px);
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+
+    animation:
+        fadeUp 2s ease 2s forwards;
+}
+
+
+.ending-divider {
+    margin: 45px 0;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    animation:
+        fadeIn 2s ease 4s forwards;
+}
+
+
+.chapter-ending {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 7px;
+
+    color:
+        rgba(255,255,255,.45);
+
+    opacity: 0;
+
+    animation:
+        fadeIn 2s ease 5s forwards;
+}
+
+
+.ending-small {
+    margin-top: 15px;
+
+    color:
+        rgba(255,255,255,.45);
+
+    opacity: 0;
+
+    animation:
+        fadeIn 2s ease 6s forwards;
+}
+
+
+.signature-final {
+    margin-top: 35px;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    opacity: 0;
+
+    animation:
+        fadeIn 2s ease 7s forwards;
+}
+
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes revealTitle {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.75);
+
+        filter: blur(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        filter: blur(0);
+    }
+
+}
+
+
+@keyframes numberAppear {
+
+    from {
+        opacity: 0;
+
+        transform: scale(.6);
+
+        filter: blur(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+
+        filter: blur(0);
+    }
+
+}
+
+
+@keyframes starsMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-100px);
+    }
+
+}
+
+
+@keyframes twinkle {
+
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes unlockAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes pageTurn {
+
+    from {
+        transform:
+            rotateY(0);
+    }
+
+    to {
+        transform:
+            rotateY(-90deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes pageNew {
+
+    from {
+        transform:
+            rotateY(90deg);
+
+        opacity: 0;
+    }
+
+    to {
+        transform:
+            rotateY(0);
+
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes lineAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes polaroidIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            rotate(-8deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+}
+
+
+@keyframes giftSparkle {
+
+    from {
+        transform: scale(1);
+
+        opacity: .6;
+    }
+
+    to {
+        transform: scale(1.2);
+
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes wishAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.94)
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+@keyframes confettiFall {
+
+    from {
+        top: -30px;
+
+        transform:
+            rotate(0deg)
+            translateX(0);
+    }
+
+    to {
+        top: 110vh;
+
+        transform:
+            rotate(720deg)
+            translateX(100px);
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .scene-content {
+        width: 95%;
+
+        padding: 18px;
+    }
+
+
+    .countdown {
+        gap: 7px;
+    }
+
+
+    .time-box {
+        min-width: 48px;
+    }
+
+
+    .colon {
+        font-size: 20px;
+    }
+
+
+    .book {
+        height: 330px;
+
+        width: 95%;
+    }
+
+
+    .book-page {
+        padding: 35px 20px;
+    }
+
+
+    .book-page p {
+        font-size: 14px;
+    }
+
+
+    .constellation {
+        height: 280px;
+
+        width: 95%;
+    }
+
+
+    .cinematic-line {
+        font-size: 18px;
+    }
+
+
+    .polaroid {
+        width: 230px;
+    }
+
+
+    .photo-frame {
+        height: 245px;
+    }
+
+
+    .letter {
+        max-height: 48vh;
+
+        padding: 25px;
+    }
+
+
+    #letterText {
+        font-size: 14px;
+    }
+
+
+    .final-content h1 {
+        letter-spacing: 4px;
+    }
+
+
+    .final-content h2 {
+        letter-spacing: 3px;
+    }
+
+}
